@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Images in HTML</title>
+	<style>
+		section {
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>Images in HTML</h1>
+		<hr>
+		<section>
+			<p>
+				<img src="../Assets/Images/ltts-logo.jpeg" alt="LTTS Logo"/>
+			</p>
+			L & T Technology Services
+		</section>
+	</div>
+	<div>
+		<h2>Map based images</h2>
+		<img src="../Assets/Images/ltts-logo.jpeg" usemap="#States"/>
+		<map name="States">
+			<area 
+				shape="rect" 
+				coords="0, 0, 100, 100" 
+				alt="KAR" 
+				href="https://www.github.com"/>
+		</map>
+	</div>
+</body>
+</html>

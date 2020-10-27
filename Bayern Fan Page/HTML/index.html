@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+	<style>
+		* {
+		  box-sizing: border-box;
+		}
+		
+		body {
+		  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		  padding: 10px;
+		  background: rgb(14, 146, 159);
+		}
+		
+		.header {
+		  padding: 30px;
+		  font-size: 25px;
+		  text-align: center;
+		  position: relative;
+		  background-color: rgb(205, 22, 47);
+		}
+		.header h1 {
+			color: white;
+		}
+		
+		.logo {
+			top: 17px;
+			left: 20px;
+			position: absolute;
+		}
+		
+		.navigation {
+		  overflow: hidden;
+		  background-color: rgb(205, 22, 47);
+		}
+		
+		.navigation a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 15px;
+		  text-decoration: none;
+		}
+		
+		.leftcolumn {   
+		  float: left;
+		  width: 75%;
+		}
+		
+		.rightcolumn {
+		  float: left;
+		  width: 25%;
+		  padding-left: 20px;
+		}
+		
+		.fakeimg {
+		  width: 100%;
+		}
+		
+		.card {
+		  background-color: white;
+		  padding: 20px;
+		  margin-top: 20px;
+		}
+		
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+		
+		.footer {
+		  padding: 20px;
+		  text-align: center;
+		  background: #ddd;
+		  margin-top: 20px;
+		}	
+	</style>
+</head>
+<body>
+
+	<div class="header">
+	  <h1>FC Bayern Munich</h1>
+	  <a href="index.html">
+		  <img class="logo" width="150px" height="150px" src="../Assets/Images/bayern-logo.png">
+	  </a>
+	</div>
+	
+	<div class="navigation">
+	  <a href="players.html">Players</a>
+	  <a href="coaches.html">Coaches</a>
+	  <a href="board.html">Board Members</a>
+	  <a href="feedback.html" style="float:right">Feedback</a>
+	</div>
+	
+	<div class="row">
+	  <div class="leftcolumn">
+		<div class="card">
+			  <h2>About FC Bayern</h2>
+			  <div class="fakeimg" style="height:200px;"><img height:"200px" width:"500px" src="../Assets/Images/bayern-team.jpeg"></div>
+		  	<p>
+				Fußball-Club Bayern München, commonly known as FC Bayern München FCB, Bayern Munich, or FC Bayern, is a German professional sports club based in Munich, Bavaria. It is best known for its professional football team, which plays in the Bundesliga, the top tier of the German football league system, and is the most successful club in German football history, having won a record 30 national titles, including eight consecutively since 2013, and 20 national cups, along with numerous European honours.
+			</p>
+		</div>
+		<div class="card">
+		  <h2>Home Ground: Allianz Arena</h2>
+		  <div class="fakeimg" style="height:200px;"><img height="200px" width="500px" src="../Assets/Images/bayern-ground.jpeg"></div>
+		  <p>FC Bayern Munich has played its home games at the Allianz Arena since the start of the 2005–06 season. The club had previously played their home games at the Munich Olympic Stadium since 1972.</p>
+		</div>
+	  </div>
+	  <div class="rightcolumn">
+		<div class="card">
+		  <h2>About Me</h2>
+		  <div class="fakeimg" style="height:100px;">Milind Mohapatra</div>
+		  <p>Intern at L & T Technology Services</p>
+		</div>
+		<div class="card">
+		  <h3>Follow Me</h3>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="footer">
+	  <h2>Visit the official FC Bayern page <a href="https://fcbayern.com/en">here.</a></h2>
+	</div>
+	
+</body>
+</html>

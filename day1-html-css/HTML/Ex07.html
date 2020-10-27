@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms in HTML</title>
+	<style>
+		input, select {
+			border: 1px solid green;
+			border-radius: 5px;
+			background-color: aliceblue;
+			color: blue;
+			width: 200px;
+		}
+		.gender {
+			width: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Forms in HTML</h1>
+	<hr>
+	<div>
+		<h2>Student registration form</h2>
+		<form>
+			<p>Enter the Name: <input type="text" placeholder="Name"> </p>
+			<p>Enter the Email ID: <input type="email" placeholder="Email ID"> </p>
+			<p>Date of Birth: <input type="date" placeholder="DOB"> </p>
+			<p>
+				Select Qualification:
+				<select placeholder="Qualification">
+					<option>School</option>
+					<option>Graduation</option>
+					<option>Post Graduation</option>
+					<option>Research</option>
+				</select>
+			</p>
+			<p>
+				<datalist id="lstCities">
+					<option>Mumbai</option>
+					<option>Delhi</option>
+					<option>Hyderabad</option>
+					<option>Bangalore</option>
+					<option>Pune</option>
+					<option>Chennai</option>
+					<option>Kolkata</option>
+					<option>Punjab</option>
+					<option>Bhubaneswar</option>
+					<option>Patna</option>
+					<option>Ahmedabad</option>
+					<option>Mysore</option>
+					<option>Vadodara</option>
+					<option>Kochin</option>
+				</datalist>
+				Select city:
+				<input list="lstCities" placeholder="Select the City"/>
+			</p>
+			<p>
+				Rate our website
+				<input type="range" min="1" max="10" step="1"/>
+			</p>
+			<p>
+				Search:
+				<input type="search" placeholder="Search here"/>
+			</p>
+			<p>
+				Gender:
+				<input class="gender" type="radio" name="gender"/>Male
+				<input class="gender" type="radio" name="gender"/>Female
+				<input class="gender" type="radio" name="gender"/>Others
+			</p>
+			<p>
+				<button>Register</button>
+			</p>
+		</form>
+	</div>
+</body>
+</html>

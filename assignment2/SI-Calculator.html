@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SI Calculator</title>
+        <script src="commonFunctions.js"></script>
+        <script>
+            function onSubmit() {
+                const roi = parseFloat($get("roi").value);
+                const amt = parseFloat($get("amount").value);
+                console.log(roi + "	" + amt);
+                const si = (amt * roi * 0.25) / 100;
+                console.log(si);
+                $get("taResult").innerText = si;
+            }
+        </script>
+        <style>
+            .block {
+				background-color: lightgrey;
+				width: 320px;
+				padding: 15px;
+			}
+        </style>
+    </head>
+    <body>
+        <h1>SI Calculator</h1>
+        <hr />
+        <div class="block">
+            <p>
+                Amount
+                <input type="text" id="amount" placeholder="Enter amount" />
+            </p>
+            <p>
+                Select rate of interest
+                <select style="width: 80px" id="roi">
+                    <option>4%</option>
+                    <option>5%</option>
+                    <option>6%</option>
+                    <option>7%</option>
+                    <option>8%</option>
+                </select>
+            </p>
+            <p>
+                <button onclick="onSubmit()">Submit</button>
+            </p>
+            <p>
+                Simple Interest:
+                <textarea id="taResult" rows="1" cols="15"></textarea>
+            </p>
+        </div>
+    </body>
+</html>

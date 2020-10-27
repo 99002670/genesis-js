@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+        <script src="commonFunctions.js"></script>
+        <style>
+            * {
+                background-color: beige;
+            }
+            button {
+                background-color: lightblue;
+                width: 75px;
+                height: 50px;
+                font-size: 30pt;
+                color: blue;
+            }
+            input {
+                height: 45px;
+                font-size: 24pt;
+            }
+            input:hover {
+                background-color: lightgrey;
+            }
+            input:focus {
+                background-color: lightgoldenrodyellow;
+                color: beige;
+                font-size: 24pt;
+            }
+            table {
+                background-color: grey;
+            }
+            .calc {
+                background-color: lightgrey;
+			}
+			textarea {
+				/* font-size: 30px; */
+				background-color: lime;
+			}
+        </style>
+        <script>
+            function enterVal(val) {
+                $get("taResult").value += val;
+            }
+            function allClear() {
+                $get("taResult").value = "";
+            }
+            function solve() {
+                let x = $get("taResult").value;
+                let v1 = 0,
+                    v2 = 0;
+                let flag = false;
+                let operand = "";
+                for (element of x) {
+                    if (!isNaN(element) && !flag) {
+                        element = parseFloat(element);
+                        v1 = v1 * 10 + element;
+                    } else if (isNaN(element)) {
+                        flag = true;
+                        operand = element;
+                        continue;
+                    } else {
+                        element = parseFloat(element);
+                        v2 = v2 * 10 + element;
+                    }
+                }
+				let result;
+                if (operand == "+") {
+                    result = addFunc(v1, v2);
+                } else if (operand == "-") {
+                    result = subFunc(v1, v2);
+                } else if (operand == "*") {
+                    result = mulFunc(v1, v2);
+                } else if (operand == "/") {
+                    result = divFunc(v1, v2);
+				}
+				$get("taResult").value = result;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <hr />
+        <table border="1">
+            <tr>
+                <td colspan="3">
+                    <textarea id="taResult" cols="30"></textarea>
+                </td>
+                <td><button class="calc" onclick="allClear()">AC</button></td>
+            </tr>
+            <tr>
+                <td><button class="calc" onclick="enterVal('7')">7</button></td>
+                <td><button class="calc" onclick="enterVal('8')">8</button></td>
+                <td><button class="calc" onclick="enterVal('9')">9</button></td>
+                <td><button class="calc" onclick="enterVal('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="calc" onclick="enterVal('4')">4</button></td>
+                <td><button class="calc" onclick="enterVal('5')">5</button></td>
+                <td><button class="calc" onclick="enterVal('6')">6</button></td>
+                <td><button class="calc" onclick="enterVal('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="calc" onclick="enterVal('1')">1</button></td>
+                <td><button class="calc" onclick="enterVal('2')">2</button></td>
+                <td><button class="calc" onclick="enterVal('3')">3</button></td>
+                <td><button class="calc" onclick="enterVal('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="calc" onclick="enterVal('.')">.</button></td>
+                <td><button class="calc" onclick="enterVal('0')">0</button></td>
+                <td><button class="calc" onclick="solve()">=</button></td>
+                <td><button class="calc" onclick="enterVal('+')">+</button></td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Call Back Functions</title>
+        <script src="commonFunctions.js"></script>
+        <script>
+			const callMe = () => ($get("Display").innerText = "Some action");
+			let handler = 0;
+            // const addFunc = (v1, v2) => v1+v2;
+            function performAction() {
+                setTimeout(() => ($get("Display").innerText = "Milind"), 5000);
+                handler = setInterval(() => {
+                    $get("Display").innerHTML +=
+                        "Function is called for very specific duration<br/>";
+                }, 1000);
+            }
+            function stopAction() {
+                clearInterval(handler);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <button onclick="performAction()">Click me</button>
+            <p id="Display"></p>
+        </div>
+        <div>
+            <button onclick="stopAction()">Stop action</button>
+        </div>
+    </body>
+</html>

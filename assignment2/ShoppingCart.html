@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Cart</title>
+        <script src="commonFunctions.js"></script>
+        <script>
+            function onSubmit() {
+                const item = $get("item").value;
+				const list = $get("lsData");
+				list.innerHTML += "<li>" + item + "</li>"
+            }
+        </script>
+        <style>
+            .block {
+				background-color: lightgrey;
+				width: 320px;
+				padding: 15px;
+			}
+			.text {
+				background-color: grey;
+				width: 320px;
+				padding: 15px;
+			}
+        </style>
+    </head>
+    <body>
+        <h1>Shopping Cart</h1>
+        <hr />
+        <div class="block">
+            <p>
+                Item
+                <input type="text" id="item" placeholder="Enter item" />
+            </p>
+            <p>
+                <button onclick="onSubmit()">Submit</button>
+            </p>
+		</div>
+		<br><br>
+		<div class="text">
+			<p>List of items</p>
+			<ul id="lsData"></ul>
+		</div>
+    </body>
+</html>

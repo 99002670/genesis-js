@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Functions</title>
+        <script>
+            function testFunc1() {
+                //Named function
+                alert("Named function testFunc1() is called");
+            }
+            testFunc1();
+
+            const testFunc2 = function () {
+                //Anonymous function
+                alert("Anonymous function testFunc2() is called");
+            };
+            testFunc2();
+
+            function checkNumber(val) {
+                if (isNaN(val)) {
+                    return 0;
+                } else {
+                    return parseFloat(val);
+                }
+            }
+
+            const addFunc = function (v1, v2) {
+                return v1 + v2;
+            };
+            const v1 = checkNumber(prompt("Enter a number"));
+            const v2 = checkNumber(prompt("Enter a number"));
+            console.log(addFunc(v1, v2));
+        </script>
+    </head>
+    <body></body>
+</html>

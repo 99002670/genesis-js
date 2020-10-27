@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Accessing DOM Elements</title>
+    </head>
+    <body>
+        <h1>Accessing DOM Elements</h1>
+        <hr />
+        <div>
+            <p class="data" id="pName">Milind Mohapatra</p>
+            <p class="data" id="pCompany">L & T Technology Services</p>
+            <p class="data" id="pSalary">Salary: 10,000</p>
+        </div>
+        <hr />
+        <div>
+            <ul id="lsData"></ul>
+        </div>
+        <div>
+            <script>
+                let p1 = document.getElementById("pName");
+                console.log(p1.innerText);
+
+                p1 = document.getElementById("pCompany");
+                console.log(p1.innerText);
+
+                p1 = document.getElementById("pSalary");
+                console.log(p1.innerText);
+
+                const items = [];
+                let flag = true;
+                const list = document.getElementById("lsData");
+                do {
+					items.push(prompt("Enter an item"));
+					list.innerHTML = "";
+                    for (const item of items) {
+                        list.innerHTML += "<li>" + item + "</li>";
+                    }
+                    flag = confirm("Do you want to add more items");
+                } while (flag);
+                console.log(items);
+            </script>
+        </div>
+    </body>
+</html>

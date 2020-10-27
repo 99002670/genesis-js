@@ -1,0 +1,31 @@
+<html>
+    <script>
+        function addNumberAsync(v1, v2) {
+            const p = new Promise((success, failure) => {
+                if (v1 >= 0 && v2 >= 0) {
+                    setTimeout(() => {
+                        console.log("Completed the process!!!");
+                        success(v1 + v2);
+                    }, 5000);
+                } else {
+                    failure("Works only for positive numbers");
+                }
+            });
+            return p;
+        }
+
+        const p = addNumberAsync(13, 12);
+        p.then((data) => {
+            console.log("Result = " + data);
+        });
+        p.catch((data) => {
+            console.log(data);
+        });
+
+        for (let index = 0; index < 10; index++) {
+            setTimeout(() => {
+				console.log("Doing some other job: " + index);
+			}, 1000);
+        }
+    </script>
+</html>
